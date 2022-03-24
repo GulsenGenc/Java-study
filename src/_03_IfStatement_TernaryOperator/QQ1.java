@@ -28,7 +28,8 @@ public class QQ1 {
         } else if (islem==4){
             System.out.println("bölme işleminin sonucu :" + sayı1 + " / " + sayı2 + " = " + (sayı1 / sayı2));
         } else{
-            System.out.println("lütfen gecerli bir işlem secınız");
+
+            System.out.println("hatalı seçim yaptınızz..");
         }
 
     }
