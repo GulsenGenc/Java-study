@@ -15,7 +15,7 @@ public class QQ1 {
         //kullanıcıya seçim içn işlem menusu yazdırdık
 
         int islem=scan.nextInt() ; //kullanıcının islem tercihi için veriable create edildi
-        System.out.println("lütfen işleme girecek iki sayı giriniz"); //kullanıcıya bildirmde bulunuldu.
+        System.out.println("lütfen işleme girecek iki tam sayı giriniz"); //kullanıcıya bildirimde bulunuldu.
         double sayı1=scan.nextDouble(); //1. sayı assign edildi
         double sayı2=scan.nextDouble(); //2. sayı assign edildi
 
