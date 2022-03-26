@@ -16,26 +16,31 @@ public class QQ2 {
         System.out.println("lütfen bir tam sayı giriniz");
         int sayı=scan.nextInt();
         List<Integer> fıbonaccı=new ArrayList<>();
-        int x=1;
-        int y=1;
-        int z;
 
-        fıbonaccı.add(x);
-        fıbonaccı.add(y);
 
-        for (int i = 1; i <=sayı-2 ; i++) {
+        int a=1;
+        int b =1;
+        int c;
+        fıbonaccı.add(a);
+        fıbonaccı.add(b);
 
-            z=x+y;
-            x=y;
-            y=z;
-            fıbonaccı.add(z);
+        for (int i = 0; i <=sayı-2 ; i++) {
+            c=a+b;
+            a=b;
+            b=c;
 
+            fıbonaccı.add(c);
         }
+        System.out.println(fıbonaccı+"-");
         for (int each: fıbonaccı
              ) {
             System.out.print(each+ "-");
 
         }
+
+
+
+
 
 
         }
