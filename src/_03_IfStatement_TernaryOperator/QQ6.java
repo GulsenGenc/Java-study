@@ -1,7 +1,5 @@
 package _03_IfStatement_TernaryOperator;
 
-import com.sun.tools.javac.Main;
-
 import java.util.Scanner;
 
 public class QQ6 {
