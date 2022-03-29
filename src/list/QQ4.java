@@ -17,10 +17,10 @@ public class QQ4 {
 
         List<Integer> tekrarsızList=new ArrayList<>();
 
-        for (Integer s:arr
+        for (Integer each:arr
              ) {
-            if (!tekrarsızList.contains(s)){
-                tekrarsızList.add(s);
+            if (!tekrarsızList.contains(each)){
+                tekrarsızList.add(each);
             }
 
         }

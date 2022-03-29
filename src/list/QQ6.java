@@ -2,6 +2,7 @@ package list;
 
 import javax.management.modelmbean.ModelMBeanAttributeInfo;
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class QQ6 {
     public static void main(String[] args) {
@@ -13,6 +14,7 @@ public class QQ6 {
 
         int arr[]={ 3, 5, 1, 2, 7, 9, 2, 3, 5, 7 };
         ardisikToplam(arr);
+        System.out.println(Arrays.toString(arr));
 
     }
 
@@ -25,8 +27,10 @@ public class QQ6 {
             for (int i = 0; i <=count ; i++) {
                 toplam+=toplananSayıAdedi-1+i;
 
-
             }
+            count++;
+            toplananSayıAdedi+=count;
+            toplananSayılarListi.add(toplam);
         }
 
 

@@ -37,8 +37,31 @@ public class FilmTahmin {
 
             System.out.println("~~~FILM TAHMIN OYUNUNA HOSGELDINIZ~~~");
 
-            System.out.println("1-"+(film.size())+" arasinda bir sayi giriniz");
+            System.out.println("0-"+(film.size())+" arasinda bir sayi giriniz");
+            int secılenFilmIndeksı=scan.nextInt();
+            filmGetir(film,secılenFilmIndeksı);
 
         }
+
+    private static void filmGetir(List<String> filmler, int ındeks) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println(filmler.get(ındeks).replaceAll("\\w"," _ "));
+        System.out.println(filmler.get(ındeks).length()+"harfli yabancı film tahmin etmek için harf giriniz : ");
+        char harf=' ';
+        int tahmınSayısı=0;
+        int dogruThmınSayısı=0;
+
+
+        do {
+
+
+        }while((tahmınSayısı-dogruThmınSayısı)!=2*filmler.get(ındeks).length());//yanlış sayısı verılen hakka ulaşanna kadar do body çalışır.
+
+
+        if ((tahmınSayısı-dogruThmınSayısı)==2*filmler.get(ındeks).length()){
+            System.out.println("yanlış tahmin sayısı :"+(tahmınSayısı-dogruThmınSayısı));
+            System.out.println("Game Over \n Yine Bekleriz \n Bulamadıgınız Film :"+filmler.get(ındeks));
+        }
     }
+}
 
