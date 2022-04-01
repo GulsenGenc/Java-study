@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class JavaAirlines {
     public static void main(String[] args) {
-        Yolcu ayhan=new Yolcu("B","tek",33);
+
 
 
 
