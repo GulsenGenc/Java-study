@@ -16,7 +16,7 @@ public class Task03_KelımeOyunu {
 
         /* Iki kisinin oynayacagi bir kelime oyunu uretelim
          * Kurallar
-         * 1- Baslangicta 1.oyuncudan bir kelime girmesini isteyin ve kelimeyi yazdirin
+W         * 1- Baslangicta 1.oyuncudan bir kelime girmesini isteyin ve kelimeyi yazdirin
          *
          * 2- 1.oyuncu kelimeyi girince 2.oyuncuya kelimeyi kabul edip etmedigini sorun.
          *      * Eger kelimeyi kabul ederse onceki oyuncuya kelimedeki harf sayisi kadar puan ekleyin
@@ -37,10 +37,9 @@ public class Task03_KelımeOyunu {
         System.out.println(oyuncu + ". oyuncu lütfen bir kelıme giriniz");
         kelime = scan.next();
 
-        oyuncuDegıstır(oyuncu);
+        oyuncuDegıstır();
 
         onayAl();
-
 
 
     }
@@ -50,11 +49,11 @@ public class Task03_KelımeOyunu {
         System.out.println(oyuncu + ". oyuncu girilen kelimeyi kabul ediyor musun ? \n1: Evet \n0: Hayir");
 
         int kabul = scan.nextInt();
-        if (kabul==1){ //kelıme kabul edıyorsa
-            if (oyuncu==1){
-                puan2+=kelime.length();//keelımenın harf sayısı kadar puanı 2.oyuncuya ekledık
+        if (kabul == 1) { //kelıme kabul edıyorsa
+            if (oyuncu == 1) {
+                puan2 += kelime.length();//keelımenın harf sayısı kadar puanı 2.oyuncuya ekledık
             } else {
-                puan1+=kelime.length();//kelımenın harf sayısı kadar puanı 1. oyuncuya ekledık
+                puan1 += kelime.length();//kelımenın harf sayısı kadar puanı 1. oyuncuya ekledık
             }
 
         } else oyunuBitir();
@@ -63,23 +62,52 @@ public class Task03_KelımeOyunu {
         oyunaDevamEdecekMi();
 
 
-
-
     }
 
     public static void oyunuBitir() {
+        System.out.println("geçersiz kelıme giridiniz\n");
+        System.out.println(oyuncu + ". oyuncu oyunu kazandı :)");
     }
 
     public static void oyunaDevamEdecekMi() {
+        System.out.println("oyuna devametmek istıyor musunuz : \n1 :EVET \n2 :HAYIR");
+        int kabul2 = scan.nextInt();
+        if (kabul2 == 1) {
+            kelımeEkle();
+        } else {
+            System.out.println("OYUN BİTTİ");
+            System.out.println("1.oyuncunun puanı :" + puan1 + "\n2.oyuncunun puanı : " + puan2);
+            if (puan1 > puan2) {
+                System.out.println("oyunu 1. oyuncu kazanmıştır");
+            } else if (puan2 > puan1) {
+                System.out.println("oyunu 2.oyuncu kazanmıştır.");
+            } else {
+                System.out.println("oyun berabere bitmiştir.");
+            }
+        }
+    }
+
+    public static void kelımeEkle() {
+        System.out.println("kelımeye eklemek ıstedıgınız kelımeyı gırınız");
+        String ekleme = scan.next();
+        System.out.println("kelımeyı başa(1) sona(2) mı  mı ekmele ıstersınız ");
+        int tercih = scan.nextInt();
+        if (tercih == 1) {
+            kelime = ekleme + kelime;
+        } else {
+            kelime = kelime + ekleme;
+        }
+        oyuncuDegıstır();
+        onayAl();
 
     }
 
-    public static int oyuncuDegıstır(int oyuncu) {
-      if (oyuncu==1){
-          oyuncu=2;
-      }else{
-          oyuncu=1;
-      }
-      return oyuncu;
+    public static int oyuncuDegıstır() {
+        if (oyuncu == 1) {
+            oyuncu = 2;
+        } else {
+            oyuncu = 1;
+        }
+        return oyuncu;
     }
 }
