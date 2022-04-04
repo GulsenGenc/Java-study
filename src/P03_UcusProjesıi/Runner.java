@@ -1,6 +1,4 @@
-package Projects.P03_UcusProjesı;
-
-import java.util.Scanner;
+package P03_UcusProjesıi;
 
 public class Runner {
     public static void main(String[] args) {

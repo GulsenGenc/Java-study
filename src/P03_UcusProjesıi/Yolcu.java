@@ -1,4 +1,4 @@
-package Projects.P03_UcusProjesı;
+package P03_UcusProjesıi;
 
 public class Yolcu {
 
