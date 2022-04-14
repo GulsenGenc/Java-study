@@ -10,6 +10,19 @@ public class Yolcu {
     double bagajAgırlıgı;
     double price = 1.0;
 
+    @Override
+    public String toString() {
+        return "Yolcu{" +
+                "name='" + name + '\'' +
+                ", surName='" + surName + '\'' +
+                ", age=" + age +
+                ", city='" + city + '\'' +
+                ", flyType=" + flyType +
+                ", bagajAgırlıgı=" + bagajAgırlıgı +
+                ", price=" + price +
+                '}';
+    }
+
     public Yolcu(String name, String surName, int age, String city, int flyType, double bagajAgırlıgı) {
         this.name = name;
         this.surName = surName;

@@ -14,4 +14,6 @@ public class QQ2 {
       6 karakterden küçük olup olmadığını classın içinde kontrol ediniz.
 
      */
+
+
 }

@@ -9,4 +9,5 @@ public class QQ1 {
     // 5- aracların motor hacmi 1000 cc ve üstü olması ve yılını hatalı veri girisine karsi kontrol ediniz.
 
 
+
 }
