@@ -32,7 +32,7 @@ public class İslemler extends KitapBilgileri{
         System.out.println("lütfen silmek istediğiniz kıtabın ismini giriniz");
         String ad= scan.nextLine();
         KitapBilgileri ktb=new KitapBilgileri();
-        if (ad.equalsIgnoreCase(ktb.isim)){
+        if (ad.equalsIgnoreCase(ktb.getIsim())){
             kitapListesi.remove(ktb);
         } else{
             System.out.println("kıtap yok");

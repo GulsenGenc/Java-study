@@ -4,7 +4,7 @@ public class KitapBilgileri {
     private String isim;
     private String yazar;
     private double fıyatBılgısı;
-    private int kıtapNo = 1000;
+    public static int kıtapNo = 1000;
 
 
     //kıtap için gereklı varıablelar tanımlandı. bu varıable'ları alan constroctor asagıda create edıldı.
@@ -52,7 +52,9 @@ public class KitapBilgileri {
     }
 
     public void setKıtapNo(int kıtapNo) {
-        this.kıtapNo = kıtapNo;
+
+       kıtapNo++;
+       this.kıtapNo=kıtapNo;
     }
 
     @Override

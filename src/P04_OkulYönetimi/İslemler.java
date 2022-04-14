@@ -83,16 +83,57 @@ public class İslemler {
     }
 
     private static void silme() {
+        System.out.println("lütfen silmek istediğiniz "+kisiTürü+" in tc kimlik numarasını giriniz");
+        String kmlkNo=scan.next();
+        boolean varMı=false;
+        for (int i = 0; i <ögrenciListesi.size() ; i++) {
+            if (kisiTürü.equals("OGRENCİ")){
+                if (ögrenciListesi.get(i).getKimlikNo().equals(kmlkNo)){
+                    System.out.println("Aradığınız öğrenci -->"+ögrenciListesi.get(i));
+                    ögrenciListesi.remove(i);
+                    System.out.println("Silme işleminiz başarıyla gerçekleştirilmiştir");
+                    varMı=true;
+                }
+            } else {
+                if (ögretmenListesi.get(i).getKimlikNo().equals(kmlkNo)){
+                    System.out.println("Aradığınız öğretmen-->"+ögretmenListesi.get(i));
+                    ögretmenListesi.remove(i);
+                    System.out.println("silme işleminiz gerçekleşmiştir");
+                    varMı=true;
+                }
+            }
+        }
+        if (varMı==false){
+            System.out.println("Bu "+kisiTürü+" listede mevcut değildir");
+        }
 
     }
 
     private static void listele() {
+
         System.out.println("öğrenci listesi =" + ögrenciListesi);
     }
 
     private static void arama() {
-        System.out.println("*** " + kisiTürü + " arama islemi ***");
-        System.out.println("aramak istediğiniz " + kisiTürü + "nin tc bilgisini yazınız");
+        System.out.println("lütfen aramak istediğiniz "+kisiTürü+" in tc kimlik numarasını giriniz");
+        String kmlkNo=scan.next();
+        boolean varMı=false;
+        for (int i = 0; i <ögrenciListesi.size() ; i++) {
+            if (kisiTürü.equals("OGRENCİ")){
+                if (ögrenciListesi.get(i).getKimlikNo().equals(kmlkNo)){
+                    System.out.println("Aradığınız öğrenci -->"+ögrenciListesi.get(i));
+                    varMı=true;
+                }
+            } else {
+                if (ögretmenListesi.get(i).getKimlikNo().equals(kmlkNo)){
+                    System.out.println("Aradığınız öğretmen-->"+ögretmenListesi.get(i));
+                    varMı=true;
+                }
+            }
+        }
+        if (varMı==false){
+            System.out.println("Aradığınız "+kisiTürü+" listede mevcut değildir");
+        }
 
     }
 
