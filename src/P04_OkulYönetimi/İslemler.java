@@ -5,10 +5,10 @@ import java.util.List;
 import java.util.Scanner;
 
 public class İslemler {
-    static ArrayList<Kisiler> ögrenciListesi = new ArrayList<>();
-    static ArrayList<Kisiler> ögretmenListesi = new ArrayList<>();
-    static Scanner scan = new Scanner(System.in);
-    static String kisiTürü;
+   public static ArrayList<Kisiler> ögrenciListesi = new ArrayList<>();
+   public static ArrayList<Kisiler> ögretmenListesi = new ArrayList<>();
+   public static Scanner scan = new Scanner(System.in);
+   public static String kisiTürü;
 
     public static void girisPanelı() {
         System.out.println("====================================\nOGRENCI VE OGRETMEN YONETIM PANELI\n" +
@@ -87,16 +87,14 @@ public class İslemler {
         String kmlkNo=scan.next();
         boolean varMı=false;
         for (int i = 0; i <ögrenciListesi.size() ; i++) {
-            if (kisiTürü.equals("OGRENCİ")){
+            if (kisiTürü.equals("ÖGRENCİ")){
                 if (ögrenciListesi.get(i).getKimlikNo().equals(kmlkNo)){
-                    System.out.println("Aradığınız öğrenci -->"+ögrenciListesi.get(i));
                     ögrenciListesi.remove(i);
                     System.out.println("Silme işleminiz başarıyla gerçekleştirilmiştir");
                     varMı=true;
                 }
-            } else {
+            } else if (kisiTürü.equals("ÖGRETMEN")){
                 if (ögretmenListesi.get(i).getKimlikNo().equals(kmlkNo)){
-                    System.out.println("Aradığınız öğretmen-->"+ögretmenListesi.get(i));
                     ögretmenListesi.remove(i);
                     System.out.println("silme işleminiz gerçekleşmiştir");
                     varMı=true;
@@ -111,7 +109,12 @@ public class İslemler {
 
     private static void listele() {
 
-        System.out.println("öğrenci listesi =" + ögrenciListesi);
+        if (kisiTürü=="ÖGRENCİ"){
+            System.out.println("öğrenci listesi--> " + ögrenciListesi);
+        } else{
+            System.out.println("Öğretmen listesi--> "+ögretmenListesi);
+        }
+
     }
 
     private static void arama() {
@@ -119,19 +122,19 @@ public class İslemler {
         String kmlkNo=scan.next();
         boolean varMı=false;
         for (int i = 0; i <ögrenciListesi.size() ; i++) {
-            if (kisiTürü.equals("OGRENCİ")){
-                if (ögrenciListesi.get(i).getKimlikNo().equals(kmlkNo)){
+            if (kisiTürü.equals("ÖGRENCİ")){
+                if (kmlkNo.equalsIgnoreCase(ögrenciListesi.get(i).getKimlikNo())){
                     System.out.println("Aradığınız öğrenci -->"+ögrenciListesi.get(i));
                     varMı=true;
                 }
             } else {
-                if (ögretmenListesi.get(i).getKimlikNo().equals(kmlkNo)){
+                if (kmlkNo.equalsIgnoreCase(ögretmenListesi.get(i).getKimlikNo())){
                     System.out.println("Aradığınız öğretmen-->"+ögretmenListesi.get(i));
                     varMı=true;
                 }
             }
         }
-        if (varMı==false){
+        if (!varMı){
             System.out.println("Aradığınız "+kisiTürü+" listede mevcut değildir");
         }
 
@@ -159,7 +162,7 @@ public class İslemler {
         } else {
             System.out.print("Sicil no giriniz");
             String sicilNo = scan.next();
-            scan.next();
+            scan.nextLine();
             System.out.print("bölüm giriniz");
             String bölüm = scan.nextLine();
             Ögretmen ögretmen = new Ögretmen(adSoyad, kimlikNo, yas, bölüm, sicilNo);
