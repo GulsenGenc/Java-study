@@ -92,6 +92,7 @@ public class İslemler {
                     ögrenciListesi.remove(i);
                     System.out.println("Silme işleminiz başarıyla gerçekleştirilmiştir");
                     varMı=true;
+                    break;
                 }
             } else if (kisiTürü.equals("ÖGRETMEN")){
                 if (ögretmenListesi.get(i).getKimlikNo().equals(kmlkNo)){
@@ -120,12 +121,15 @@ public class İslemler {
     private static void arama() {
         System.out.println("lütfen aramak istediğiniz "+kisiTürü+" in tc kimlik numarasını giriniz");
         String kmlkNo=scan.next();
+        scan.next();
+
         boolean varMı=false;
         for (int i = 0; i <ögrenciListesi.size() ; i++) {
             if (kisiTürü.equals("ÖGRENCİ")){
                 if (kmlkNo.equalsIgnoreCase(ögrenciListesi.get(i).getKimlikNo())){
                     System.out.println("Aradığınız öğrenci -->"+ögrenciListesi.get(i));
                     varMı=true;
+                    break;
                 }
             } else {
                 if (kmlkNo.equalsIgnoreCase(ögretmenListesi.get(i).getKimlikNo())){
