@@ -12,7 +12,7 @@ public class Ex06 {
         //soru1--->
         HashSet<Integer> hashSet1=new HashSet<>();
         for (int i = 0; i <10 ; i++) {
-            hashSet1.add(1+(int) (Math.random() * (20-1)));
+            hashSet1.add(1+(int) (Math.random() * (20-1)));//+1 ile sıfır uretmesının önune gecıldı. task 1-20 arası dediği için
         }
         System.out.println(hashSet1);
 
